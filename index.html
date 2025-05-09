@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2c3e50;
+    }
+
+    .registration-form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    input[type="date"]:focus {
+      border-color: #3498db;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+    }
+
+    .checkbox-group input {
+      margin-right: 10px;
+      width: auto;
+    }
+
+    .submit-btn {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #2980b9;
+    }
+
+    input:invalid {
+      border-color: #e74c3c;
+    }
+
+    input:valid {
+      border-color: #2ecc71;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 20px;
+        margin: 10px;
+      }
+    }
+
+    .footer__link-text {
+      margin: 0;
+    }
+
+    .footer__info-text {
+      margin: 0;
+      max-width: 318px;
+    }
+
+    .footer__info-text--color {
+      color: #d6001e;
+      margin: 0;
+      max-width: 318px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+
+    .footer__contacts-box {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+
+    .footer__contact-text {
+      margin: 0;
+    }
+
+    .footer__contact-text--number {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 32px;
+      margin: 0;
+      padding-top: 20px;
+    }
+
+    .footer__app {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 10px;
+    }
+
+    .footer__app-title {
+      margin: 0;
+    }
+
+    .footer__app-box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .footer__bottom-box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .color__text {
+      color: #d6001e;
+      text-decoration: none;
+    }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      color: #333;
+    }
+
+    /* Шапка */
+    .header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      border-bottom: 1px solid #e6e6e6;
+      padding: 15px;
+      flex-wrap: wrap;
+    }
+
+    .header__logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 30px;
+    }
+
+    .header__logo-img {
+      width: 60px;
+      height: 40px;
+      border-radius: 10px;
+    }
+
+    .header__nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .header__nav-text {
+      margin: 0;
+    }
+
+    .header__profile {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .header__profile-link {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .header__nav-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .header__profile-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .header__nav-cours {
+      color: #2eb62c;
+      margin: 0;
+    }
+
+    .header__profile-button {
+      padding: 16px;
+      background: #ffce00;
+      border-radius: 10px;
+      border: none;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    /* Новости */
+    .news {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .news__box {
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .news__title {
+      max-width: 550px;
+    }
+
+    .news__box-text {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+    }
+
+    .news__box-img {
+      flex: 1;
+      min-width: 300px;
+      background: #eee;
+      height: 300px;
+      max-width: 100%;
+      object-fit: cover; /* сохраняет пропорции и обрезает если нужно */
+      border-radius: 8px; /* опционально */
+    }
+
+    /* Форма */
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    /* Подвал */
+    .footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 100px;
+      border-top: 2px solid #d6001e;
+      padding: 20px;
+    }
+
+    .footer__logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 30px;
+      padding-top: 20px;
+      padding-bottom: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer__link {
+      display: flex;
+      flex-direction: row;
+      border-top: 1px solid #e6e6e6;
+      border-bottom: 1px solid #e6e6e6;
+      gap: 70px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      flex-wrap: wrap;
+    }
+
+    .footer__link-item {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 10px;
+      min-width: 150px;
+    }
+
+    .footer__link-item--big {
+      display: flex;
+      flex-direction: row;
+      align-items: start;
+      gap: 70px;
+      flex-wrap: wrap;
+    }
+
+    .footer__info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      gap: 200px;
+      padding-bottom: 40px;
+      align-items: flex-start;
+      padding-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .footer__info-box {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 10px;
+      min-width: 300px;
+    }
+
+    .footer__contacts {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .footer__bottom {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: #dbdbdb;
+      gap: 400px;
+      padding: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
+
+    /* Медиазапросы для адаптивности */
+    @media (max-width: 1200px) {
+      .footer__bottom {
+        gap: 200px;
+      }
+
+      .footer__info {
+        gap: 100px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .footer__link {
+        gap: 40px;
+      }
+
+      .footer__link-item--big {
+        gap: 40px;
+      }
+
+      .footer__bottom {
+        gap: 100px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .header__nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header__profile {
+        justify-content: flex-start;
+      }
+
+      .news__box {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .footer__link {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .footer__link-item--big {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .footer__info {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .footer__contacts {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer__bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .header__logo-img {
+        width: 100px;
+        height: auto;
+      }
+
+      .footer__logo {
+        gap: 15px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+    }
+  </style>
+  <body>
+    <header class="header">
+      <div class="header__logo">
+        <b>
+          <svg
+            width="30"
+            height="30"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <g>
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path d="M3 4h18v2H3V4zm0 7h12v2H3v-2zm0 7h18v2H3v-2z" />
+            </g>
+          </svg>
+        </b>
+        <img
+          width="100px"
+          height="40px"
+          src="img/footerLogo-1.png"
+          alt="LOGO"
+        />
+      </div>
+      <nav class="header__nav">
+        <div class="header__nav-item">
+          <b>
+            <svg
+              width="20"
+              height="20"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g>
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path
+                  d="M3.783 2.826L12 1l8.217 1.826a1 1 0 0 1 .783.976v9.987a6 6 0 0 1-2.672 4.992L12 23l-6.328-4.219A6 6 0 0 1 3 13.79V3.802a1 1 0 0 1 .783-.976zM5 4.604v9.185a4 4 0 0 0 1.781 3.328L12 20.597l5.219-3.48A4 4 0 0 0 19 13.79V4.604L12 3.05 5 4.604zM11 10V7h2v3h3v2h-3v3h-2v-3H8v-2h3z"
+                />
+              </g>
+            </svg>
+          </b>
+          <p class="header__nav-text">Lorem, ipsum.</p>
+        </div>
+        <div class="header__nav-item">
+          <b>
+            <svg
+              width="20"
+              height="20"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g>
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path
+                  fill-rule="nonzero"
+                  d="M10 6a8 8 0 0 0 11.955 6.956C21.474 18.03 17.2 22 12 22 6.477 22 2 17.523 2 12c0-5.2 3.97-9.474 9.044-9.955A7.963 7.963 0 0 0 10 6zm-6 6a8 8 0 0 0 8 8 8.006 8.006 0 0 0 6.957-4.045c-.316.03-.636.045-.957.045-5.523 0-10-4.477-10-10 0-.321.015-.64.045-.957A8.006 8.006 0 0 0 4 12zm14.164-9.709L19 2.5v1l-.836.209a2 2 0 0 0-1.455 1.455L16.5 6h-1l-.209-.836a2 2 0 0 0-1.455-1.455L13 3.5v-1l.836-.209A2 2 0 0 0 15.29.836L15.5 0h1l.209.836a2 2 0 0 0 1.455 1.455zm5 5L24 7.5v1l-.836.209a2 2 0 0 0-1.455 1.455L21.5 11h-1l-.209-.836a2 2 0 0 0-1.455-1.455L18 8.5v-1l.836-.209a2 2 0 0 0 1.455-1.455L20.5 5h1l.209.836a2 2 0 0 0 1.455 1.455z"
+                />
+              </g>
+            </svg>
+          </b>
+          <p class="header__nav-text">Lorem, ipsum.</p>
+        </div>
+        <div class="header__nav-item">
+          <p class="header__nav-text">lorem</p>
+        </div>
+        <div class="header__nav-item">
+          <p class="header__nav-text">lorem</p>
+          <i class="fa-solid fa-arrow-up-long" style="color: #2eb62c"></i>
+          <p class="header__nav-cours">5,456</p>
+        </div>
+      </nav>
+      <div class="header__profile">
+        <div class="header__profile-item">
+          <b
+            ><svg
+              width="30"
+              height="30"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-person-lines-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"
+              /></svg
+          ></b>
+          <a class="header__profile-link" href="#">Profile</a>
+        </div>
+        <button class="header__profile-button">Assine OUL</button>
+      </div>
+    </header>
+    <div class="news">
+      <h1 class="news__title">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ex
+        dicta exercitationem quasi!
+      </h1>
+      <div class="news__box">
+        <p class="news__box-text">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+          commodi sit vel illo, recusandae veniam animi quae odit possimus
+          quibusdam quidem dignissimos at ducimus accusamus officia suscipit
+          dolore sunt sapiente placeat quam, assumenda quas mollitia in
+          nesciunt. Perferendis, officiis eius.
+        </p>
+        <img class="news__box-img" src="img/audi.jpg" alt="image" />
+      </div>
+    </div>
+    <div class="form">
+      <div class="container">
+        <h2>Регистрация</h2>
+        <form class="registration-form" action="/register" method="POST">
+          <div class="form-group">
+            <label for="name">Имя:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Введите ваше имя"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="example@mail.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Пароль:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              minlength="6"
+              placeholder="Не менее 6 символов"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-password">Подтвердите пароль:</label>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              required
+              placeholder="Повторите пароль"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="birthdate">Дата рождения:</label>
+            <input type="date" id="birthdate" name="birthdate" />
+          </div>
+
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="terms" name="terms" required />
+            <label for="terms">Я согласен с условиями использования</label>
+          </div>
+
+          <button type="submit" class="submit-btn">Зарегистрироваться</button>
+        </form>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer__logo">
+        <img
+          width="100px"
+          height="40px"
+          src="img/footerLogo-1.png"
+          alt="LOGO"
+        />
+        <img
+          width="100px"
+          height="25px"
+          src="img/footerLogo-2.png"
+          alt="LOGO"
+        />
+        <img
+          width="100px"
+          height="30px"
+          src="img/footerLogo-3.png"
+          alt="LOGO"
+        />
+        <img
+          width="100px"
+          height="40px"
+          src="img/footerLogo-1.png"
+          alt="LOGO"
+        />
+        <img
+          width="100px"
+          height="25px"
+          src="img/footerLogo-2.png"
+          alt="LOGO"
+        />
+        <img
+          width="100px"
+          height="30px"
+          src="img/footerLogo-3.png"
+          alt="LOGO"
+        />
+        <img
+          width="100px"
+          height="40px"
+          src="img/footerLogo-1.png"
+          alt="LOGO"
+        />
+        <img
+          width="100px"
+          height="25px"
+          src="img/footerLogo-2.png"
+          alt="LOGO"
+        />
+        <img
+          width="100px"
+          height="30px"
+          src="img/footerLogo-3.png"
+          alt="LOGO"
+        />
+      </div>
+      <nav class="footer__link">
+        <div class="footer__link-item">
+          <b><p class="footer__link-text">Lorem, ipsum.</p></b>
+          <p class="footer__link-text">Lorem, ipsum.</p>
+          <p class="footer__link-text">Lorem, ipsum.</p>
+          <p class="footer__link-text">Lorem, ipsum.</p>
+          <p class="footer__link-text">Lorem, ipsum.</p>
+          <p class="footer__link-text">Lorem, ipsum.</p>
+          <p class="footer__link-text">Lorem, ipsum.</p>
+          <p class="footer__link-text">Lorem, ipsum.</p>
+          <p class="footer__link-text">Lorem, ipsum.</p>
+          <p class="footer__link-text">Lorem, ipsum.</p>
+        </div>
+        <div class="footer__link-item--big">
+          <div class="footer__link-item">
+            <b><p class="footer__link-text">Lorem, ipsum.</p></b>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+          </div>
+          <div class="footer__link-item">
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+          </div>
+        </div>
+        <div class="footer__link-item--big">
+          <div class="footer__link-item">
+            <b><p class="footer__link-text">Lorem, ipsum.</p></b>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+          </div>
+          <div class="footer__link-item">
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+            <p class="footer__link-text">Lorem, ipsum.</p>
+          </div>
+        </div>
+        <div class="footer__link-item">
+          <b><p class="footer__link-text">Lorem, ipsum.</p></b>
+          <p class="footer__link-text">Lorem, ipsum.</p>
+          <p class="footer__link-text">Lorem, ipsum.</p>
+          <p class="footer__link-text">Lorem, ipsum.</p>
+          <p class="footer__link-text">Lorem, ipsum.</p>
+          <p class="footer__link-text">Lorem, ipsum.</p>
+          <p class="footer__link-text">Lorem, ipsum.</p>
+        </div>
+      </nav>
+      <div class="footer__info">
+        <div class="footer__info-box">
+          <p class="footer__info-text">Lorem, ipsum.</p>
+          <p class="footer__info-text--color">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+            natus corrupti libero eaque?
+          </p>
+        </div>
+        <div class="footer__contacts">
+          <div class="footer__contact-box">
+            <p class="footer__contact-text">lorem</p>
+            <p class="footer__contact-text--number">4003-6118</p>
+            <p class="footer__contact-text">lorem</p>
+          </div>
+          <div class="footer__contact-box">
+            <p class="footer__contact-text--number">4003-6118</p>
+            <p class="footer__contact-text">lorem</p>
+          </div>
+        </div>
+        <div class="footer__app">
+          <p class="footer__app-title">Lorem, ipsum dolor.</p>
+          <div class="footer__app-box">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.apple.com/app-store/"
+            >
+              <img
+                width="170px"
+                height="50px"
+                src="img/AppStoreLogo.png"
+                alt="AppStore"
+            /></a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://play.google.com/store/apps?hl=ru&pli=1"
+            >
+              <img
+                width="160px"
+                height="41px"
+                src="img/GooglePlayLogo.png"
+                alt="GooglePlay"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__bottom-text">
+          Lorem ipsum dolor, sit amet consectetur
+          <a href="#" class="color__text">adipisicing</a> elit. Suscipit,
+          <a href="#" class="color__text">harum sed</a>.
+        </p>
+        <div class="footer__bottom-box">
+          <p class="footer__bottom-box--text">Lorem, ipsum dolor.</p>
+          <a href="#">
+            <img
+              width="25px"
+              height="25px"
+              src="img/facebook-box-line-10.svg"
+              alt=""
+          /></a>
+          <a href="#">
+            <img width="25px" height="25px" src="img/instagram-line.svg" alt=""
+          /></a>
+          <a href="#"
+            ><img
+              width="25px"
+              height="25px"
+              src="img/youtube-line.svg"
+              alt="icon"
+          /></a>
+          <a href="#"
+            ><img width="20px" height="20px" src="img/flipboard.svg" alt="icon"
+          /></a>
+          <a href="#"
+            ><img
+              width="25px"
+              height="25px"
+              src="img/pinterest-line.svg"
+              alt="icon"
+          /></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

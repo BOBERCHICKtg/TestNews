@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" id="flipboard">
+  <rect width="8" height="24"></rect>
+  <rect width="8" height="16" x="12" y="-4" opacity=".75" transform="rotate(90 16 4)"></rect>
+  <rect width="8" height="8" x="8" y="8" opacity=".5"></rect>
+</svg>
