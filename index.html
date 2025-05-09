@@ -73,8 +73,8 @@
     }
 
     .submit-btn {
-      background-color: #3498db;
-      color: white;
+      background-color: #ffce00;
+      color: #000;
       border: none;
       padding: 12px;
       border-radius: 4px;
@@ -85,7 +85,7 @@
     }
 
     .submit-btn:hover {
-      background-color: #2980b9;
+      background-color: #a58400;
     }
 
     input:invalid {
@@ -234,6 +234,13 @@
       flex-direction: row;
       align-items: center;
       gap: 7px;
+      text-decoration: none;
+      color: #000;
+      transition: 0.2s;
+    }
+
+    .header__nav-item:hover {
+      color: #d6001e;
     }
 
     .header__profile-item {
@@ -241,6 +248,11 @@
       flex-direction: row;
       align-items: center;
       gap: 5px;
+      transition: 0.2s;
+    }
+
+    .header__profile-item:hover {
+      color: #d6001e;
     }
 
     .header__nav-cours {
@@ -255,6 +267,11 @@
       border: none;
       white-space: nowrap;
       cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .header__profile-button:hover {
+      background-color: #a58400;
     }
 
     /* Новости */
@@ -488,7 +505,7 @@
   <body>
     <header class="header">
       <div class="header__logo">
-        <b>
+        <b style="cursor: pointer">
           <svg
             width="30"
             height="30"
@@ -509,7 +526,7 @@
         />
       </div>
       <nav class="header__nav">
-        <div class="header__nav-item">
+        <a href="#" class="header__nav-item">
           <b>
             <svg
               width="20"
@@ -526,8 +543,8 @@
             </svg>
           </b>
           <p class="header__nav-text">Lorem, ipsum.</p>
-        </div>
-        <div class="header__nav-item">
+        </a>
+        <a href="#" class="header__nav-item">
           <b>
             <svg
               width="20"
@@ -545,15 +562,15 @@
             </svg>
           </b>
           <p class="header__nav-text">Lorem, ipsum.</p>
-        </div>
-        <div class="header__nav-item">
+        </a>
+        <a href="#" class="header__nav-item">
           <p class="header__nav-text">lorem</p>
-        </div>
-        <div class="header__nav-item">
+        </a>
+        <a href="#" class="header__nav-item">
           <p class="header__nav-text">lorem</p>
           <i class="fa-solid fa-arrow-up-long" style="color: #2eb62c"></i>
           <p class="header__nav-cours">5,456</p>
-        </div>
+        </a>
       </nav>
       <div class="header__profile">
         <div class="header__profile-item">
